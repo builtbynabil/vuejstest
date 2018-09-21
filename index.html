@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>microdose</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <div class="block">
+                <i class="material-icons">
+                    new_releases
+                </i>
+                <h1>{{title}}</h1>
+                <h5 class="font-weight-light">by {{authorname}}</h5>
+
+                <hr>
+
+                <p>{{description}}</p>
+            </div>
+        </div>
+
+        <br>
+
+        <hr style="background-size: 4px; border-top: 4px solid rgba(0, 0, 0, 0.1);">
+
+        <br>
+
+        <div id="infos">
+
+            <div v-for="item in items">
+
+                <div class="block">
+                    <h1>
+                        <i v-if="item['limitations'] == true" class="material-icons">warning</i>
+                        {{item["name"]}}</h1>
+
+                    <p>{{item["description"]}}</p>
+
+                    <a v-if='item["repoLink"] == ""' class="btn btn-primary disabled" v-bind:href="item['repoLink']">No
+                        Respository Link</a>
+
+                    <a v-else class="btn btn-primary" v-bind:href="item['repoLink']">Respository Link</a>
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
