@@ -32,7 +32,26 @@
 
                 <p>{{description}}</p>
 
-                <button class="editMode btn btn-danger">EDIT</button>
+                <div class="form">
+                        <input v-model="title">
+
+                        <br>
+
+                        <input v-model="authorname">
+
+                        <br>
+
+                        <textarea v-model="description" cols="23" rows="5"></textarea>
+
+                    </div>
+                
+                <button class="editMode btn btn-danger">
+
+                        <i class="material-icons">
+                                text_fields
+                                </i>
+                    
+                    TOGGLE EDIT MODE</button>
             </div>
         </div>
 
@@ -56,11 +75,12 @@
 
                         <br>
 
-                        <textarea v-model="item['description']" cols="30" rows="3"></textarea>
+                        <textarea v-model="item['description']" cols="20" rows="3"></textarea>
 
                         <br>
 
                         <input v-model="item['repoLink']">
+
                     </div>
 
 
